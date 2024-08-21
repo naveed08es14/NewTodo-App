@@ -63,7 +63,7 @@ app.get("/", async function (req, res) {
       <span class="item-text">${item.text}</span>
       <div>
       <button action="/update-item" method="GET" data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">Edit</button>
-      <button action="delete-item" method="GET" data-id="${item._id}" class="delete-me btn btn-danger btn-sm">Delete</button>
+      <button action="/delete-item" method="GET" data-id="${item._id}" class="delete-me btn btn-danger btn-sm">Delete</button>
       </div>
       </li>`
       })
@@ -73,7 +73,7 @@ app.get("/", async function (req, res) {
   </div>
   
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/browser.js"></script>
+  <script src="/public/browser.js"></script>
   </body>
   </html>`)
 })

@@ -75,6 +75,7 @@ app.post("/create-item", async function (req, res) {
     let safeText = sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
     const info = await db.collection("items").insertOne({ text: req.body.item})
     res.json({ _id: info.insertedId, text: req.body.item})
+    res.send("Success")
 })
 
 app.post("/update-item", async function (req, res) {

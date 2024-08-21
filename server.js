@@ -73,13 +73,13 @@ app.get("/", passwordProtected, async function (req, res) {
 
 app.post("/create-item", async function (req, res) {
     let safeText = sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
-    const info = await db.collection("items").insertOne({ text: safeText })
-    res.json({ _id: info.insertedId, text: safeText })
+    const info = await db.collection("items").insertOne({ text: req.body.item} })
+    res.json({ _id: info.insertedId, text: req.body.item} })
 })
 
 app.post("/update-item", async function (req, res) {
     let safeText = sanitizeHTML(req.body.text, { allowedTags: [], allowedAttributes: {} })
-    await db.collection("items").findOneAndUpdate({ _id: new ObjectId(req.body.id) }, { $set: { text: safeText } })
+    await db.collection("items").findOneAndUpdate({ _id: new ObjectId(req.body.id) }, { $set: { text: req.body.item} } })
     res.send("Success")
 })
 

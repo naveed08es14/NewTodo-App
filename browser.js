@@ -22,10 +22,7 @@ let createField = document.getElementById("create-field")
 
 document.getElementById("create-form").addEventListener("submit", function (e) {
     e.preventDefault()
-       alert("YOu pressed")
     axios.post("/create-item", { text: "Test" }).then(function (response) {
-         // alert
-           alert("YOu pressed")
             // Create the HTML for a new item
             document.getElementById("item-list").insertAdjacentHTML("beforeend", itemTemplate(response.data))
             createField.value = ""

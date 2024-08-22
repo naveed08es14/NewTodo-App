@@ -6,7 +6,6 @@ let sanitizeHTML = require("sanitize-html")
 let app = express()
 let db
 
-app.use(express.static('public'))
 
  function go() {
     let client = new MongoClient('mongodb+srv://todoAppUser:Oman2020@cluster0.il0szdw.mongodb.net/Todo-app?retryWrites=true&w=majority&appName=Cluster0')
@@ -73,7 +72,7 @@ app.get("/", async function (req, res) {
   </div>
   
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/public/browser.js"></script>
+  <script src="browser.js"></script>
   </body>
   </html>`)
 })

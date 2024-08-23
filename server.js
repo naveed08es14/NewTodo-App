@@ -11,7 +11,6 @@ if (port == null || port == "") {
   port = 3000
 }
 
-app.use(express.static("public"))
 
 async function go() {
     let client = new MongoClient('mongodb+srv://todoAppUser:Oman2020@cluster0.il0szdw.mongodb.net/Todo-app?retryWrites=true&w=majority&appName=Cluster0')
@@ -70,7 +69,7 @@ app.get("/", async function (req, res) {
   </script>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/browser.js"></script>
+  <script src="browser.js"></script>
   </body>
   </html>`)
 })

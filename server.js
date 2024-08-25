@@ -46,6 +46,13 @@ app.get("/", passwordProtected, async function (req, res) {
   <body>
   <div class="container">
   <h1 class="display-4 text-center py-1">To-Do App!</h1>
+ <button>Click to alert</button>
+  </body>
+  <script>
+  document.addEventListener("click", function(){
+ alert("Thank you for clicking")
+})
+  </script>
   
   <div class="jumbotron p-3 shadow-sm">
   <form id="create-form" action="/create-item" method="POST">
